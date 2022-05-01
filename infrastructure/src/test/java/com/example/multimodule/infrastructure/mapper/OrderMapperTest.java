@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -25,12 +27,13 @@ class OrderMapperTest {
     OrderMapper orderMapper;
 
     @Test
+    @Sql("/fixture/insert_order.sql")
     void name() {
         List<OrderDO> orderDOS = orderMapper.selectList(null);
-        assertThat(orderDOS, hasSize(0));
+        assertThat(orderDOS, hasSize(2));
     }
 
-    @SpringBootApplication
+    @ContextConfiguration
     @MapperScan("com.example.multimodule.infrastructure.mapper")
     static class TestConfiguration {
     }

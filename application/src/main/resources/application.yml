@@ -5,6 +5,17 @@ spring:
     username: root
     password: pass
 
+management:
+  trace:
+    http:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: httptrace
+
 logging:
   level:
-    com.example.demo: TRACE
+    com.example.multimodule.application: TRACE
+    org.springframework.web.filter.CommonsRequestLoggingFilter: TRACE
+    org.springframework.web: TRACEg

@@ -1,4 +1,4 @@
-package com.example.multimodule.application.controller;
+package com.example.multimodule.application.service;
 
 import com.example.multimodule.infrastructure.dataobject.OrderDO;
 import com.example.multimodule.infrastructure.mapper.OrderMapper;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MyService {
+public class OrderService {
 
 	@Autowired
 	private OrderMapper orderMapper;

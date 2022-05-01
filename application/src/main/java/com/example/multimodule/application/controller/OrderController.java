@@ -1,5 +1,6 @@
 package com.example.multimodule.application.controller;
 
+import com.example.multimodule.application.service.OrderService;
 import com.example.multimodule.infrastructure.dataobject.OrderDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +16,15 @@ import java.util.List;
 public class OrderController {
 
     @Autowired
-    private MyService myService;
+    private OrderService orderService;
 
     @GetMapping("/{id}")
     public OrderDO orders(@PathVariable String id) {
-        return this.myService.orders(id);
+        return this.orderService.orders(id);
     }
 
     @GetMapping
     public List<OrderDO> allOrders() {
-        return this.myService.allOrders();
+        return this.orderService.allOrders();
     }
 }

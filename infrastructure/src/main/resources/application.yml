@@ -16,6 +16,14 @@ logging:
   level:
     com.example.demo: TRACE
 
+management:
+  trace:
+    http:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: httptrace
 mybatis-plus:
   configuration:
     mapUnderscoreToCamelCase: false

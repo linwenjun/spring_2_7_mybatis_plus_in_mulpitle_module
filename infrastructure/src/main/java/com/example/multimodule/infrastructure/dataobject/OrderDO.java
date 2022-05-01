@@ -24,7 +24,7 @@ public class OrderDO {
     @AllArgsConstructor
     public static class OrderItem {
         private String sku;
-        private String price;
+        private BigDecimal price;
         private int amount;
     }
 
@@ -33,7 +33,7 @@ public class OrderDO {
     private String name;
     private BigDecimal price;
 
-    @TableField(value = "order_items", typeHandler = OrderItemTypeHandler.class)
+    @TableField(value = "order_item", typeHandler = OrderItemTypeHandler.class)
     private List<OrderItem> orderItems;
 
 }

@@ -25,10 +25,9 @@ class OrderMapperSpec extends Specification {
         def actual = orderMapper.selectList(null);
 
         then:
-//        print(actual)
         actual.size() == 2
-        actual[0].getOrderItem().size() == 1
-//        actual[0].getOrderItem()[0].price == "70000.00"
+        actual[0].getOrderItems().size() == 1
+        actual[0].getOrderItems()[0].price == 70000.00
     }
 
     @SpringBootApplication

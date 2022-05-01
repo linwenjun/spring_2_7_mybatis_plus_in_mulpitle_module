@@ -2,6 +2,7 @@ package org.example.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
@@ -22,5 +23,10 @@ public class JsonUtils {
     @SneakyThrows
     public static <T> T unmarshal(String jsonStr, Class<T> valueType) {
         return OBJECT_MAPPER.readValue(jsonStr, valueType);
+    }
+
+    @SneakyThrows
+    public static <T> T unmarshal(String jsonStr, JavaType javaType) {
+        return OBJECT_MAPPER.readValue(jsonStr, javaType);
     }
 }

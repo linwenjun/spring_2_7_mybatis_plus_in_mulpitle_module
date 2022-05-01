@@ -16,6 +16,6 @@ logging:
   level:
     com.example.demo: TRACE
 
-mybatis-plus:
-  configuration:
-    mapUnderscoreToCamelCase: false
+#mybatis-plus:
+#  configuration:
+#    mapUnderscoreToCamelCase: false

@@ -4,18 +4,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: pass
-  jpa:
-    showSql: true
-    hibernate:
-      formatSql: true
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
 logging:
   level:
     com.example.demo: TRACE
-
-mybatis-plus:
-  configuration:
-    mapUnderscoreToCamelCase: false

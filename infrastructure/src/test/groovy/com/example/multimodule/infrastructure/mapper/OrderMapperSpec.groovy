@@ -13,19 +13,22 @@ import spock.lang.Specification
 @MybatisPlusTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Transactional
-@Rollback
+//@Rollback
 class OrderMapperSpec extends Specification {
 
     @Autowired
     OrderMapper orderMapper;
 
     @Sql("/fixture/insert_order.sql")
-    def "should_load_single_record"() {
+    def "should load single record"() {
         when:
         def actual = orderMapper.selectList(null);
 
         then:
+//        print(actual)
         actual.size() == 2
+        actual[0].getOrderItem().size() == 1
+//        actual[0].getOrderItem()[0].price == "70000.00"
     }
 
     @SpringBootApplication

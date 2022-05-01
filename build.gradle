@@ -1,0 +1,55 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'groovy'
+    id 'java'
+    id 'idea'
+}
+
+subprojects {
+
+    sourceCompatibility = '11'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'groovy'
+    apply plugin: 'org.springframework.boot'
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+
+
+    dependencyManagement {
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        }
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web:2.6.3'
+        implementation 'com.baomidou:mybatis-plus-boot-starter:3.5.1'
+        implementation 'org.projectlombok:lombok'
+        implementation 'org.flywaydb:flyway-core:8.5.10'
+        implementation 'org.flywaydb:flyway-mysql:8.5.10'
+
+        implementation 'com.fasterxml.jackson.core:jackson-core:2.13.2'
+        implementation 'cn.hutool:hutool-json:5.8.0.M3'
+        annotationProcessor 'org.projectlombok:lombok'
+        runtimeOnly 'mysql:mysql-connector-java'
+
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'com.baomidou:mybatis-plus-boot-starter-test:3.5.1'
+        testImplementation 'org.codehaus.groovy:groovy-all:3.0.10'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+        testImplementation 'org.spockframework:spock-junit4:2.2-M1-groovy-3.0'
+        testImplementation 'org.spockframework:spock-spring:2.2-M1-groovy-3.0'
+
+        testImplementation 'org.codehaus.groovy:groovy-all:3.0.10'
+        testImplementation 'org.spockframework:spock-junit4:2.2-M1-groovy-3.0'
+
+    }
+}

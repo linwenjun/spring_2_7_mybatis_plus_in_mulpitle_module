@@ -8,5 +8,5 @@ pluginManagement {
 rootProject.name = 'gs-multi-module'
 include 'application'
 include 'infrastructure'
-
+include 'shared'
 

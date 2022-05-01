@@ -20,8 +20,8 @@ dependencyManagement {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.projectlombok:lombok'
 	implementation 'com.baomidou:mybatis-plus-boot-starter:3.5.1'
+	implementation 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'com.baomidou:mybatis-plus-boot-starter-test:3.5.1'

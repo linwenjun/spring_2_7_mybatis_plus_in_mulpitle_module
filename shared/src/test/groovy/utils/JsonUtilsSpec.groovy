@@ -4,7 +4,7 @@ import groovy.transform.builder.Builder
 import lombok.Getter
 import lombok.RequiredArgsConstructor
 import lombok.Setter
-import org.example.utils.JsonUtils
+import org.example.multimodule.order.utils.JsonUtils
 import spock.lang.Specification
 
 import java.time.Instant

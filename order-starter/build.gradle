@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    implementation project(':shared')
+    implementation project(':infrastructure')
+    implementation project(':application')
+    implementation project(':infrastructure').sourceSets.main.output
+    implementation project(':application').sourceSets.main.output
+}
+
+test {
+    useJUnitPlatform()
+}
+
+springBoot {
+    mainClass = 'org.example.multimodule.order.OrderApplication'
+}

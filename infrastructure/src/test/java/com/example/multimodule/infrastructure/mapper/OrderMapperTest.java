@@ -6,6 +6,7 @@ import org.example.multimodule.order.infrastructure.persistent.mapper.OrderMappe
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -33,8 +34,8 @@ class OrderMapperTest {
         assertThat(orderDOS, hasSize(2));
     }
 
-    @ContextConfiguration
-    @MapperScan("com.example.multimodule.infrastructure.mapper")
+    @SpringBootConfiguration
+    @MapperScan("org.example.multimodule.order.infrastructure.persistent.mapper")
     static class TestConfiguration {
     }
 }

@@ -27,4 +27,8 @@ public class Order {
     private String name;
     private BigDecimal price;
     private List<OrderItem> orderItems;
+
+    public int getAmount() {
+        return 100;
+    }
 }

@@ -4,6 +4,7 @@ sourceCompatibility = '11'
 
 dependencies {
 	implementation project(':shared')
+	implementation project(':order-domain')
 }
 
 tasks.named('test') {

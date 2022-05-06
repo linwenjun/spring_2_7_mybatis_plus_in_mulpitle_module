@@ -15,8 +15,7 @@ dependencies {
     implementation project(':shared')
     implementation project(':infrastructure')
     implementation project(':application')
-    implementation project(':infrastructure').sourceSets.main.output
-    implementation project(':application').sourceSets.main.output
+    implementation project(':order-domain')
 }
 
 test {

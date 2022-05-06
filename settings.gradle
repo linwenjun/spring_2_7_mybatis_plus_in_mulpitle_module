@@ -3,3 +3,5 @@ include 'application'
 include 'infrastructure'
 include 'shared'
 include 'order-starter'
+include 'order-domain'
+

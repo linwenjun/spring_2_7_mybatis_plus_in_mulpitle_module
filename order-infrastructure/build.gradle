@@ -1,5 +1,5 @@
 dependencies {
-	implementation project(':shared')
+	implementation project(':order-shared')
 	implementation project(':order-domain')
 }
 

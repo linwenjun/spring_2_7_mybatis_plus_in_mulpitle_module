@@ -3,7 +3,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 dependencies {
-	implementation project(':shared')
+	implementation project(':order-shared')
 	implementation project(':order-domain')
 }
 

@@ -12,9 +12,9 @@ repositories {
 apply plugin: 'org.springframework.boot'
 
 dependencies {
-    implementation project(':shared')
-    implementation project(':infrastructure')
-    implementation project(':application')
+    implementation project(':order-shared')
+    implementation project(':order-infrastructure')
+    implementation project(':order-application')
     implementation project(':order-domain')
 }
 

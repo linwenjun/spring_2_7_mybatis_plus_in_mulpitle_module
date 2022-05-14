@@ -26,8 +26,12 @@ public class Order {
     private int id;
     private String name;
     private BigDecimal price;
+    private String code;
     private List<OrderItem> orderItems;
 
+    public void updateCode(String code) {
+        this.code = code;
+    }
     public int getAmount() {
         return 100;
     }

@@ -4,6 +4,7 @@ import lombok.*;
 import org.example.multimodule.order.domain.Order;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -12,6 +13,18 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class OrderResponseDTO {
+
+    @Getter
+    @Setter(AccessLevel.PROTECTED)
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Builder
+    static public class UserResponseDTO {
+        private Long id;
+        private String firstName;
+        private String lastName;
+        private LocalDate birthDate;
+    }
 
     @Getter
     @Setter
@@ -29,4 +42,5 @@ public class OrderResponseDTO {
     private BigDecimal price;
     private List<Order.OrderItem> orderItems;
     private int amount;
+    private UserResponseDTO user;
 }

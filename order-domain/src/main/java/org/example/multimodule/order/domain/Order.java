@@ -29,10 +29,13 @@ public class Order {
     private String code;
     private List<OrderItem> orderItems;
 
+    private User user;
+
     public void updateCode(String code) {
         this.code = code;
     }
     public int getAmount() {
         return 100;
     }
+
 }

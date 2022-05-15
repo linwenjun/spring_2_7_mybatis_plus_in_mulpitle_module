@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/orders")
 @RequiredArgsConstructor
@@ -22,6 +25,13 @@ public class OrderController {
     @GetMapping("/{id}")
     public OrderResponseDTO orders(@PathVariable String id) {
         Order order = this.orderService.orders(id);
-        return converter.OrderToOrderResponseDTO(order);
+        return converter.fromDomain(order);
+    }
+
+    @GetMapping
+    public List<OrderResponseDTO> allOrders() {
+        return this.orderService.allOrders().stream()
+                .map(converter::fromDomain)
+                .collect(Collectors.toList());
     }
 }

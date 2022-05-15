@@ -8,6 +8,9 @@ import org.example.multimodule.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 @RequiredArgsConstructor
 public class OrderRepositoryImpl implements OrderRepository {
@@ -21,5 +24,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     public Order selectById(String id) {
         OrderDO orderDO = orderMapper.selectById(id);
         return converter.toDomain(orderDO);
+    }
+
+    @Override
+    public List<Order> allOrders() {
+        return orderMapper.all().stream()
+                .map(converter::toDomain).collect(Collectors.toList());
     }
 }

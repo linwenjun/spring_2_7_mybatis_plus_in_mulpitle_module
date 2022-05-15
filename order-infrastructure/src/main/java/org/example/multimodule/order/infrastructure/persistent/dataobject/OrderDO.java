@@ -28,10 +28,13 @@ public class OrderDO {
     }
 
     @TableId(type = IdType.AUTO)
-    private String id;
+    private Long id;
     private String name;
     private BigDecimal price;
 
     @TableField(value = "order_item", typeHandler = OrderItemTypeHandler.class)
     private List<OrderItem> orderItems;
+
+    @TableField(exist = false)
+    private UserDO user;
 }

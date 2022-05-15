@@ -9,12 +9,21 @@ class UserMapperSpec extends BasicMapperSpec{
     @Autowired
     UserMapper userMapper;
 
-    @Sql("/fixture/insert_user.sql")
+    @Sql("/fixture/insert_user_n_order.sql")
     def "should get user by id"() {
         when:
         def user = userMapper.selectById(1);
 
         then:
         user.id == 1L;
+    }
+
+    @Sql("/fixture/insert_user_n_order.sql")
+    def "should get all users"() {
+        when:
+        def user = userMapper.selectAllUsers();
+
+        then:
+        user.size() == 2;
     }
 }

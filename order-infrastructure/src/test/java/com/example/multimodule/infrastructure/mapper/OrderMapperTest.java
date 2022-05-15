@@ -28,7 +28,7 @@ class OrderMapperTest {
     OrderMapper orderMapper;
 
     @Test
-    @Sql("/fixture/insert_order.sql")
+    @Sql("/fixture/insert_user_n_order.sql")
     void name() {
         List<OrderDO> orderDOS = orderMapper.selectList(null);
         assertThat(orderDOS, hasSize(2));

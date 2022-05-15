@@ -20,6 +20,6 @@ public class OrderRepositoryImpl implements OrderRepository {
     @Override
     public Order selectById(String id) {
         OrderDO orderDO = orderMapper.selectById(id);
-        return converter.OrderDOToOrder(orderDO);
+        return converter.toDomain(orderDO);
     }
 }

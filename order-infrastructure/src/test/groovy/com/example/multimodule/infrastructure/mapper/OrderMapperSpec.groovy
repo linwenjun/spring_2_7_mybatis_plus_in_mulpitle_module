@@ -13,11 +13,7 @@ import org.springframework.test.context.jdbc.Sql
 import org.springframework.transaction.annotation.Transactional
 import spock.lang.Specification
 
-@MybatisPlusTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Transactional
-@Rollback
-class OrderMapperSpec extends Specification {
+class OrderMapperSpec extends BasicMapperSpec {
 
     @Autowired
     OrderMapper orderMapper;
@@ -32,10 +28,5 @@ class OrderMapperSpec extends Specification {
         actual[0].getOrderItems().size() == 1
         actual[0].getOrderItems()[0].price == 70000.00
         actual[0].getOrderItems()[0].sku == '13Max'
-    }
-
-    @SpringBootConfiguration
-    @MapperScan("org.example.multimodule.order.infrastructure.persistent.mapper")
-    static class TestConfiguration {
     }
 }

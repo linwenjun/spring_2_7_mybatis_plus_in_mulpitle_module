@@ -6,4 +6,6 @@ import org.example.multimodule.order.infrastructure.persistent.dataobject.OrderD
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface OrderMapper extends BaseMapper<OrderDO> { }
+public interface OrderMapper extends BaseMapper<OrderDO> {
+
+}

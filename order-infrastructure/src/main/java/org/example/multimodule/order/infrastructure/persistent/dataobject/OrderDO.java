@@ -34,5 +34,4 @@ public class OrderDO {
 
     @TableField(value = "order_item", typeHandler = OrderItemTypeHandler.class)
     private List<OrderItem> orderItems;
-
 }

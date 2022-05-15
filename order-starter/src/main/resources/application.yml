@@ -16,6 +16,6 @@ management:
 
 logging:
   level:
-    com.example.multimodule.application: TRACE
+    com.example.multimodule: TRACE
     org.springframework.web.filter.CommonsRequestLoggingFilter: TRACE
     org.springframework.web: TRACE

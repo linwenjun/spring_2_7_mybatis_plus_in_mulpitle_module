@@ -14,4 +14,17 @@ spring:
 
 logging:
   level:
-    com.example.demo: TRACE
+    org.example.multimodule.order: TRACE
+
+management:
+  trace:
+    http:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: httptrace
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

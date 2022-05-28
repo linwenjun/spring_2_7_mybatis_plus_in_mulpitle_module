@@ -1,4 +1,4 @@
-package com.example.multimodule.infrastructure.mapper
+package org.example.multimodule.infrastructure.mapper
 
 import org.example.multimodule.order.infrastructure.persistent.mapper.UserMapper
 import org.springframework.beans.factory.annotation.Autowired

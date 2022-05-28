@@ -1,4 +1,4 @@
-package com.example.multimodule
+package org.example.multimodule
 
 import org.mybatis.spring.annotation.MapperScan
 import org.springframework.boot.autoconfigure.SpringBootApplication

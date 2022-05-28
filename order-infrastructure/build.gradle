@@ -1,6 +1,11 @@
 dependencies {
 	implementation project(':order-shared')
 	implementation project(':order-domain')
+	implementation 'com.baomidou:mybatis-plus-boot-starter:3.5.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.baomidou:mybatis-plus-boot-starter-test:3.5.1'
 }
 
 tasks.named('test') {

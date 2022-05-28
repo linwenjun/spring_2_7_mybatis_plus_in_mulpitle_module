@@ -1,4 +1,4 @@
-package com.example.multimodule.infrastructure.mapper;
+package org.example.multimodule.order.infrastructure.persistent.mapper;
 
 import com.baomidou.mybatisplus.test.autoconfigure.MybatisPlusTest;
 import org.example.multimodule.order.infrastructure.persistent.dataobject.OrderDO;

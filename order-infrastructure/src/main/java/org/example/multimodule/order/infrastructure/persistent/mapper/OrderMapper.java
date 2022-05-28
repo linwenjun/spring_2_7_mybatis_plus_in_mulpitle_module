@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.*;
 import org.example.multimodule.order.infrastructure.persistent.dataobject.OrderDO;
 import org.example.multimodule.order.infrastructure.persistent.dataobject.UserDO;
-import org.example.multimodule.order.infrastructure.persistent.typeHandler.OrderItemTypeHandler;
+import org.example.multimodule.order.infrastructure.persistent.mapper.typeHandler.OrderItemTypeHandler;
 
 import java.util.List;
 

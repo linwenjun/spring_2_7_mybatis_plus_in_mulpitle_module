@@ -1,4 +1,4 @@
-package com.example.multimodule.infrastructure.mapper
+package org.example.multimodule.infrastructure.mapper
 
 import com.baomidou.mybatisplus.test.autoconfigure.MybatisPlusTest
 import org.mybatis.spring.annotation.MapperScan

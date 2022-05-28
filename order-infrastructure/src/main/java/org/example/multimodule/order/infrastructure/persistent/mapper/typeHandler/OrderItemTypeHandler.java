@@ -1,4 +1,4 @@
-package org.example.multimodule.order.infrastructure.persistent.typeHandler;
+package org.example.multimodule.order.infrastructure.persistent.mapper.typeHandler;
 
 import org.example.multimodule.order.infrastructure.persistent.dataobject.OrderDO;
 
